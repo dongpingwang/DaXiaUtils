@@ -4,11 +4,12 @@ import android.app.Instrumentation;
 
 import com.daxia.utils.android.thread.ThreadUtils;
 
+import java.io.IOException;
+
 
 /**
  * @author Dongping Wang
  * date 21-3-17
- * email wangdongping@flyaudio.cn
  */
 public final class KeyEventUtils {
 
@@ -18,13 +19,21 @@ public final class KeyEventUtils {
 
     }
 
-    private static void sendKey(final int key) {
+    public static void sendKeyDownUpSync(final int key) {
         ThreadUtils.execute(new Runnable() {
             @Override
             public void run() {
                 getInstrumentation().sendKeyDownUpSync(key);
             }
         });
+    }
+
+    public static void exec(final int key) {
+        try {
+            Runtime.getRuntime().exec("input keyevent " + key);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private static Instrumentation getInstrumentation() {
@@ -37,4 +46,5 @@ public final class KeyEventUtils {
         }
         return instrumentation;
     }
+
 }
