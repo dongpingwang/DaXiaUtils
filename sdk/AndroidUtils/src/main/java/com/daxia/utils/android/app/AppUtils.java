@@ -6,7 +6,6 @@ import com.daxia.utils.android.context.ContextUtils;
 /**
  * @author Dongping Wang
  * date 21-3-25
- * email wangdongping@flyaudio.cn
  */
 public final class AppUtils {
 

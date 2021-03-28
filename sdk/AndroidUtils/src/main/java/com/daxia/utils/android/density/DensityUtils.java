@@ -5,7 +5,6 @@ import com.daxia.utils.android.res.ResUtils;
 /**
  * @author Dongping Wang
  * date 21-3-25
- * email wangdongping@flyaudio.cn
  */
 public final class DensityUtils {
 

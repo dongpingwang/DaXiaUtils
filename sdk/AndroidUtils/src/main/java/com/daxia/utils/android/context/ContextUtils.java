@@ -7,10 +7,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- * Author WangDongPing
- * Date: 21-2-2
- * Version:1.0
- * Revise:
+ * @author Dongping Wang
+ * date 21-2-2
  */
 public final class ContextUtils {
 

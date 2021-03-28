@@ -15,7 +15,6 @@ import java.io.InputStreamReader;
 /**
  * @author Dongping Wang
  * date 21-3-19
- * email wangdongping@flyaudio.cn
  */
 public final class FileUtils {
 

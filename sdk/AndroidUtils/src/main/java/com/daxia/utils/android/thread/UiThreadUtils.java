@@ -7,7 +7,6 @@ import android.os.Looper;
 /**
  * @author Dongping Wang
  * date 21-3-25
- * email wangdongping@flyaudio.cn
  */
 public final class UiThreadUtils {
 

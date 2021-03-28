@@ -6,7 +6,6 @@ import java.io.IOException;
 /**
  * @author Dongping Wang
  * date 21-3-19
- * email wangdongping@flyaudio.cn
  */
 public final class CloseableUtils {
 
