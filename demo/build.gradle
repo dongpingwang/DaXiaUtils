@@ -20,12 +20,11 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
     // android support
     implementation "com.android.support:appcompat-v7:$rootProject.appcompat_v7_version"
     testImplementation "junit:junit:$rootProject.junit_version"
     androidTestImplementation "com.android.support.test:runner:$rootProject.runner_version"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espresso_core_version"
-
-    implementation(project(':AndroidUtils'))
+    // implementation project(':AndroidUtils')
+    implementation files('../sdk/outputs/DaXiaAndroidUtils.jar')
 }

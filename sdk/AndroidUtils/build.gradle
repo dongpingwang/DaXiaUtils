@@ -21,6 +21,18 @@ android {
         }
     }
 
+
+    //生成jar包
+    task makeJar(type: Copy) {
+        // delete '../outputs/DaXiaAndroidUtils.jar'
+        from('build/intermediates/packaged-classes/release/') // jar文件来源
+        into('../outputs/') // 生成路径
+        include('classes.jar')
+        rename('classes.jar', 'DaXiaAndroidUtils.jar') // 命名为DaXiaAndroidUtils.jar
+    }
+
+    makeJar.dependsOn(build)
+
 }
 
 dependencies {
