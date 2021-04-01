@@ -18,8 +18,8 @@ public final class ContextUtils {
 
     private static volatile Application application;
 
-    public static Context getContext() {
-        return getApplicationInternal().getApplicationContext();
+    public static void init(Application application) {
+        ContextUtils.application = application;
     }
 
     private static <T extends Application> T getApplicationInternal() {
@@ -50,6 +50,10 @@ public final class ContextUtils {
 
     public static Application getApplication() {
         return getApplicationInternal();
+    }
+
+    public static Context getContext() {
+        return getApplicationInternal().getApplicationContext();
     }
 
 }

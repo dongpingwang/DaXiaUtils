@@ -21,13 +21,18 @@ public final class UiThreadUtils {
             if (isMainLooper()) {
                 run.run();
             } else {
-                UI_HANDLER.post(run);
+                runOnUIThread(run);
             }
         }
+    }
+
+    public static void runOnUIThread(Runnable run, long delay) {
+        UI_HANDLER.postDelayed(run, delay);
     }
 
     public static boolean isMainLooper() {
         return Looper.myLooper() == Looper.getMainLooper();
     }
+
 
 }

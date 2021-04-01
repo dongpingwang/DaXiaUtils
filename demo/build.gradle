@@ -25,6 +25,9 @@ dependencies {
     testImplementation "junit:junit:$rootProject.junit_version"
     androidTestImplementation "com.android.support.test:runner:$rootProject.runner_version"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espresso_core_version"
-    // implementation project(':AndroidUtils')
-    implementation files('../sdk/outputs/DaXiaAndroidUtils.jar')
+
+    implementation project(':AndroidUtils')
+    // implementation files('../sdk/outputs/DaXiaAndroidUtils.jar')
+
+
 }
