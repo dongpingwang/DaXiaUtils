@@ -2,4 +2,7 @@ include ':demo'
 
 def sdkPath = './sdk/'
 include ':AndroidUtils'
+include ':AndroidUtils'
 project(':AndroidUtils').projectDir = new File(sdkPath + 'AndroidUtils')
+include ':AndroidUtilsPro'
+project(':AndroidUtilsPro').projectDir = new File(sdkPath + 'AndroidUtilsPro')

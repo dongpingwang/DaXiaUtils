@@ -24,4 +24,16 @@ public final class CloseableUtils {
             // silently
         }
     }
+
+    public static void closeSilently(AutoCloseable... closes) {
+        try {
+            for (AutoCloseable close : closes) {
+                if (close != null) {
+                    close.close();
+                }
+            }
+        } catch (Exception e) {
+            // silently
+        }
+    }
 }

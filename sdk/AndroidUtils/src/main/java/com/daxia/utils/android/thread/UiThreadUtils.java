@@ -21,7 +21,7 @@ public final class UiThreadUtils {
             if (isMainLooper()) {
                 run.run();
             } else {
-                runOnUIThread(run);
+                runOnUIThread(run, -1);
             }
         }
     }
