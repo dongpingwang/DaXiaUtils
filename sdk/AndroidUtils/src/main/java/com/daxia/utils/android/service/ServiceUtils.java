@@ -39,6 +39,15 @@ public final class ServiceUtils {
         ContextUtils.getContext().startService(service);
     }
 
+    public static void stopServicee(Class<?> cls) {
+        Intent intent = new Intent(ContextUtils.getContext(), cls);
+        stopService(intent);
+    }
+
+    public static void stopService(Intent service) {
+        ContextUtils.getContext().stopService(service);
+    }
+
     public static boolean bindService(Intent service, @NonNull ServiceConnection conn, int flags) {
         return ContextUtils.getContext().bindService(service, conn, flags);
     }

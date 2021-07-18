@@ -50,28 +50,28 @@ public final class ToastUtils {
         show(decorator, null, Toast.LENGTH_LONG);
     }
 
-    private synchronized static void show(Decorator decorator, String msg, int duration) {
-        if (toast != null) {
-            toast.cancel();
-            toast = null;
-        }
-        if (decorator != null) {
-            if (decorator.getView() == null) {
-                return;
-            }
-            toast = new Toast(ContextUtils.getContext());
-            toast.setView(decorator.getView());
-            Decorator.Gravity gravity = decorator.getGravity();
-            if (gravity != null) {
-                toast.setGravity(gravity.gravity, gravity.xOffset, gravity.yOffset);
-            }
-            toast.setDuration(duration);
-        } else {
-            toast = Toast.makeText(ContextUtils.getContext(), msg, duration);
-        }
+    private synchronized static void show(final Decorator decorator,final String msg, final int duration) {
         UiThreadUtils.runOnUIThread(new Runnable() {
             @Override
             public void run() {
+                if (toast != null) {
+                    toast.cancel();
+                    toast = null;
+                }
+                if (decorator != null) {
+                    if (decorator.getView() == null) {
+                        return;
+                    }
+                    toast = new Toast(ContextUtils.getContext());
+                    toast.setView(decorator.getView());
+                    Decorator.Gravity gravity = decorator.getGravity();
+                    if (gravity != null) {
+                        toast.setGravity(gravity.gravity, gravity.xOffset, gravity.yOffset);
+                    }
+                    toast.setDuration(duration);
+                } else {
+                    toast = Toast.makeText(ContextUtils.getContext(), msg, duration);
+                }
                 if (toast.getView() != null) {
                     toast.show();
                 }
